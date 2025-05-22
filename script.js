@@ -17,3 +17,16 @@ document.querySelectorAll('button').forEach(button => {
         }
     });
 });
+
+document.querySelectorAll('.skills-tabs button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active from all buttons
+        document.querySelectorAll('.skills-tabs button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Hide all skills lists
+        document.querySelectorAll('.skills-section .skills').forEach(list => list.style.display = 'none');
+        // Show the selected skills list
+        const tab = this.getAttribute('data-tab');
+        document.querySelector('.skills-' + tab).style.display = 'flex';
+    });
+});

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micaella Salili - Portfolio</title>
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,18 +22,23 @@
     <section id="home">
         <div class="home-content">
             <div class="profile-image">
-                <img src="profile.jpg" alt="Micaella Salili">
+                <img src="images/profile.jpg" alt="Micaella Salili">
+                <h1>Hi, I'm</h1>
+                <h1><span>Micaella Salili</span></h1>
+                <h3>Web Developer</h3>
             </div>
             <div class="home-text">
-                <h1>Hi, I’m <span>MICAELLA SALILI</span></h1>
-                <p>Web Developer | Computer Engineering Student</p>
-                <p>I build responsive websites and intuitive user interfaces with a touch of creative design.<br>Turning ideas into reality through code and design.</p>
-                <div class="buttons">
+                <div class="desc">
+                    <em>I build websites intuitive user interfaces with a touch of creative design.</em><br>
+                    Turning ideas into reality through code.
+                </div>
+                <div class="gradient-line"></div>
+                <div class="home-buttons">
                     <button>View My Work</button>
                     <button>Contact Me</button>
                 </div>
-                <div class="social-links">
-                    <a href="#">GitHub</a>
+                <div class="home-links">
+                    <a href="#">Github</a>
                     <a href="#">LinkedIn</a>
                     <a href="#">Resume</a>
                 </div>
@@ -42,52 +48,112 @@
 
     <!-- About Section -->
     <section id="about">
-        <h2>MICAELLA SALILI</h2>
-        <p>Web Developer | Computer Engineering Student</p>
-        <p>A Computer Engineering student with a passion for web development and UI/UX design. I enjoy building responsive websites and creative digital experiences that are both functional and user-friendly.</p>
+        <div class="about-header">
+            <h1>About Me</h1>
+            <div class="about-desc">
+                A Computer Engineering student with a passion for web development and UI/UX design. I enjoy building responsive websites and creative digital experiences that are both functional and user-friendly.
+            </div>
+        </div>
         <div class="skills-section">
-            <button>Technical Skills</button>
-            <h3>Technical Tools</h3>
-            <h3>Frontend Skills</h3>
-            <h3>Backend Skills</h3>
-            <h3>Soft Skills</h3>
-            <div class="skills">
-                <div class="skill"><img src="github-icon.png" alt="GitHub">GitHub</div>
-                <div class="skill"><img src="figma-icon.png" alt="Figma">Figma</div>
-                <div class="skill"><img src="skill-icon.png" alt="Skill">Skill</div>
-                <div class="skill"><img src="skill-icon.png" alt="Skill">Skill</div>
-                <div class="skill"><img src="skill-icon.png" alt="Skill">Skill</div>
+            <div class="skills-tabs">
+                <button class="active" data-tab="technical"><span>Technical</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="certifications"><span>Credentials &</span> <span class="tab-secondary">Certifications</span></button>
+                <button data-tab="frontend"><span>Frontend</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="backend"><span>Backend</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="soft"><span>Soft</span> <span class="tab-secondary">Skills</span></button>
+            </div>
+            <div class="gradient-line"></div>
+            <div class="skills skills-technical">
+                <div class="skill"><img src="github-icon.png" alt="GitHub"><div class="skill-title">GitHub</div></div>
+                <div class="skill"><img src="autocad-icon.png" alt="AutoCAD"><div class="skill-title">AutoCAD</div></div>
+                <div class="skill"><img src="arduino-icon.png" alt="Arduino"><div class="skill-title">Arduino/Sketching</div></div>
+                <div class="skill"><img src="packettracer-icon.png" alt="Packet Tracer"><div class="skill-title">Packet Tracer</div></div>
+                <div class="skill"><img src="office-icon.png" alt="Microsoft Office"><div class="skill-title">Microsoft Office</div></div>
+                <div class="skill"><img src="powerdirector-icon.png" alt="PowerDirector"><div class="skill-title">PowerDirector</div></div>
+                <div class="skill"><img src="obs-icon.png" alt="OBS Studio"><div class="skill-title">OBS Studio</div></div>
+            </div>
+            <div class="skills skills-certifications" style="display:none;">
+                <div class="skill"><div class="skill-title">Certifications</div><div class="skill-desc">To follow</div></div>
+            </div>
+            <div class="skills skills-frontend" style="display:none;">
+                <div class="skill"><img src="react-icon.png" alt="React JS"><div class="skill-title">React JS</div></div>
+                <div class="skill"><img src="vue-icon.png" alt="Vue JS"><div class="skill-title">Vue JS</div></div>
+                <div class="skill"><img src="html-icon.png" alt="HTML"><div class="skill-title">HTML</div></div>
+                <div class="skill"><img src="tailwind-icon.png" alt="Tailwind/CSS"><div class="skill-title">Tailwind/CSS</div></div>
+                <div class="skill"><img src="js-icon.png" alt="JavaScript"><div class="skill-title">JavaScript</div></div>
+                <div class="skill"><img src="reactnative-icon.png" alt="React Native"><div class="skill-title">React Native</div></div>
+                <div class="skill"><img src="cordova-icon.png" alt="Apache Cordova"><div class="skill-title">Apache Cordova</div></div>
+                <div class="skill"><img src="android-icon.png" alt="Android Development"><div class="skill-title">Android Development</div></div>
+                <div class="skill"><img src="figma-icon.png" alt="Figma"><div class="skill-title">Figma & Sketch</div></div>
+                <div class="skill"><img src="wordpress-icon.png" alt="WordPress"><div class="skill-title">WordPress</div></div>
+                <div class="skill"><img src="canva-icon.png" alt="Canva"><div class="skill-title">Canva</div></div>
+            </div>
+            <div class="skills skills-backend" style="display:none;">
+                <div class="skill"><img src="python-icon.png" alt="Python"><div class="skill-title">Python</div></div>
+                <div class="skill"><img src="php-icon.png" alt="PHP MySQL"><div class="skill-title">PHP MySQL</div></div>
+                <div class="skill"><img src="sql-icon.png" alt="SQL"><div class="skill-title">SQL</div></div>
+                <div class="skill"><img src="postman-icon.png" alt="Postman API"><div class="skill-title">Postman API</div></div>
+                <div class="skill"><img src="phpmyadmin-icon.png" alt="phpMyAdmin"><div class="skill-title">phpMyAdmin</div></div>
+                <div class="skill"><img src="cordova-cli-icon.png" alt="Cordova CLI"><div class="skill-title">Cordova CLI</div></div>
+            </div>
+            <div class="skills skills-soft" style="display:none;">
+                <div class="skill"><div class="skill-title">Time management and organizational skills</div></div>
+                <div class="skill"><div class="skill-title">Leadership and ability to work efficiently in projects</div></div>
+                <div class="skill"><div class="skill-title">Written and verbal communication skills</div></div>
             </div>
         </div>
     </section>
 
     <!-- Works Section -->
     <section id="works">
-        <h2>Projects</h2>
-        <a href="#" class="portfolio-link">Portfolio of Works on GitHub</a>
-        <div class="projects">
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1</p>
+        <div class="works-header">
+            <div class="works-header-row">
+                <h1>Projects</h1>
+                <div class="works-links">
+                    <span>
+                        <a href="https://drive.google.com/your-gdrive-link" target="_blank" class="portfolio-link-highlight">Portfolio</a> of Works
+                    </span>
+                    <span>
+                        <a href="https://github.com/your-github-link" target="_blank" class="github-link-highlight">Works</a> on GitHub
+                    </span>
+                </div>
             </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Description of Project 2</p>
+            <div class="works-gradient-line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="project1.png" alt="Project 1">
+                <div class="project-desc">Description of Project 1</div>
+                <div class="project-title">Project 1</div>
+            </div>
+            <div class="project-card">
+                <img src="project2.png" alt="Project 2">
+                <div class="project-desc">Description of Project 2</div>
+                <div class="project-title">Project 2</div>
+            </div>
+            <div class="project-card">
+                <img src="project3.png" alt="Project 3">
+                <div class="project-desc">Description of Project 3</div>
+                <div class="project-title">Project 3</div>
+            </div>
+            <div class="project-card">
+                <img src="project4.png" alt="Project 4">
+                <div class="project-desc">Description of Project 4</div>
+                <div class="project-title">Project 4</div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>I’d love to hear from you! — Feel free to reach out.</h2>
+        <h2>I’d love to hear from you! — <b>Feel free to reach out.</b></h2>
+        <div class="gradient-line"></div>
         <div class="contact-content">
             <div class="contact-info">
-                <img src="profile.jpg" alt="Micaella Salili">
+                <img src="images/profile.jpg" alt="Micaella Salili">
                 <p>Email: <a href="mailto:sallimicaella@gmail.com">sallimicaella@gmail.com</a></p>
-                <p>Contact Number: 0951316622</p>
-                <p>Location: Quezon City, Metro Manila</p>
+                <p>Contact Number: <strong>0951316622</strong></p>
+                <p>Location: <strong>Quezon City, Metro Manila</strong></p>
             </div>
             <div class="contact-links">
                 <h3>Links</h3>
@@ -99,11 +165,12 @@
             <div class="contact-downloads">
                 <h3>Download</h3>
                 <button>Resume</button>
-                <button>Curriculum Vitae</button>
+                <button>Curiculum Vitae</button>
                 <button>Portfolio</button>
             </div>
         </div>
     </section>
+
 
     <script src="script.js"></script>
 </body>
