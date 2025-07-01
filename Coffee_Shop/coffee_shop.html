@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jake's Coffee Shop</title>
+    <script>
+        let isCssVersion = false;
+
+        function toggleVersion() {
+            isCssVersion = !isCssVersion;
+
+            if (isCssVersion) {
+                document.querySelector("h1").style.display = "none";
+                document.querySelector("nav").style.display = "none";
+                document.querySelector(".css-header").style.display = "block";
+                document.querySelector(".css-nav").style.display = "block";
+                document.body.classList.add("css-version");
+                document.getElementById("css-website-link").innerText = "HTML Website";
+            } else {
+                document.querySelector("h1").style.display = "block";
+                document.querySelector("nav").style.display = "block";
+                document.querySelector(".css-header").style.display = "none";
+                document.querySelector(".css-nav").style.display = "none";
+                document.body.classList.remove("css-version");
+                document.getElementById("css-website-link").innerText = "CSS Website";
+            }
+        }
+
+        function showSection(section) {
+            const sections = ["main-content", "menu-section", "music-section", "jobs-section"];
+            sections.forEach(id => document.getElementById(id).style.display = id === section ? 'block' : 'none');
+        }
+    </script>
+</head>
+<body>
+    <h1>Jake’s Coffee Shop</h1>
+    <nav>
+        <a href="#" onclick="showSection('main-content'); return false;">Home</a> 
+        <a href="#" onclick="showSection('menu-section'); return false;">Menu</a> 
+        <a href="#" onclick="showSection('music-section'); return false;">Music</a> 
+        <a href="#" onclick="showSection('jobs-section'); return false;">Jobs</a>
+    </nav>
+    
+    <div class="css-header" style="display: none;">Jake’s Coffee Shop</div>
+    <div class="css-nav" style="display: none;">
+        <a href="#" onclick="showSection('main-content'); return false;">Home</a> 
+        <a href="#" onclick="showSection('menu-section'); return false;">Menu</a> 
+        <a href="#" onclick="showSection('music-section'); return false;">Music</a> 
+        <a href="#" onclick="showSection('jobs-section'); return false;">Jobs</a>
+    </div>
+
+    <div id="main-content" style=>
+        <p>Come in and experience...</p>
+        <p> <img src="images/coffee.jpg" alt="Coffee cup" width="150"></p>
+        <ul>
+            <li>Specialty Coffee and Tea</li>
+            <li>Freshly made sandwiches</li>
+            <li>Bagels, Muffins, and Organic Snacks</li>
+            <li>Music and Poetry Readings</li>
+            <li>Open mic nights</li>
+        </ul>
+        <p>23 Pine Road<br>Nottingham, NG1 5YU<br>0115 9324567</p>
+    </div>
+    
+    <div id="menu-section" style="display: none;">
+        <h2>Menu</h2>
+        <ul>
+            <li><img src="images/cappucinno.jpg" alt="Cappuccino" width="50"><br><b>Cappuccino (P120) </b></li>
+            <li><img src="images/matcha_latte.jpg" alt="Matcha Latte" width="50"><br><b>Matcha Latte (P150)</b></li>
+            <li><img src="images/iced_americano.jpg" alt="Iced Americano" width="50"><br><b>Iced Americano (P110)</b></li>
+            <li><img src="images/pesto_panini.jpg" alt="Pesto Panini" width="50"><br><b>Pesto Panini (P200)</b></li>
+            <li><img src="images/blueberry_muffin.jpg" alt="Blueberry Muffin" width="50"><br><b>Blueberry Muffin (P110)</b></li>
+        </ul>
+    </div>
+
+    <div id="music-section" style="display: none;">
+        <h2>Music</h2>
+        <ul>
+            <li><img src="images/jazz.jpg" alt="Jazz" width="50"><br><b>Jazz</b></li>
+            <li><img src="images/lofi_beats.jpg" alt="Lo-Fi Beats" width="50"><br><b>Lo-Fi Beats</b></li>
+            <li><img src="images/indie_music.jpg" alt="Indie Acoustic" width="50"><br><b>Indie Acoustic</b></li>
+            <li><img src="images/bossa_nova.jpg" alt="Bossa Nova" width="50"><br><b>Bossa Nova</b></li>
+            <li><img src="images/piano_music.jpg" alt="Classical Piano" width="50"><br><b>Classical Piano</b></li>
+        </ul>
+    </div>
+
+    <div id="jobs-section" style="display: none;">
+        <h2>Jobs</h2>
+        <ul>
+            <li><img src="images/barista.jpg" alt="Barista" width="50"><br> <b> Barista </b></li>
+            <li><img src="images/cashier.jpg" alt="Cashier" width="50"><br> <b> Cashier</b></li>
+            <li><img src="images/baker.jpg" alt="Baker" width="50"><br> <b> Baker</b></li>
+            <li><img src="images/server.jpg" alt="Server" width="50"><br> <b> Server </b></li>
+            <li><img src="images/website_developer.jpg" alt="Website Developer" width="50"><br><b> Website Developer</b></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>Copyright 2017 Jake’s Coffee House<br>
+            <a href="mailto:jake@jcoffee.com">jake@jcoffee.com</a></p>
+        <p><a href="#" id="css-website-link" onclick="toggleVersion(); return false;">CSS Website</a> >>>>></p>
+    </div>
+</body>
+</html>

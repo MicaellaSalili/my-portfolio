@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        body
+        {
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Fix the background image while scrolling */
+            color: #FFF8ED; /* Set the default font color */
+            font-family: 'Raleway';
+            font-size: 16px;
+        }
+
+        .header img.home {
+            margin-left:15px;
+            margin-top:15px;
+            display: block;
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+        .mainmenu {
+            width: 100%; /* Example of setting a fixed width */
+            margin: 0 auto; /* Center the mainmenu */
+        }
+
+        .mainmenu .overlay-text
+        {
+            position: absolute;
+            top: 280px; /* Position the text vertically at the center */
+            left: 6%; /* Position the text horizontally at the center */
+            color: white; /* Set the text color */
+            font-size: 40px; /* Adjust the font size as needed */
+            font-family: 'Archivo Narrow';
+            max-width: 500px;
+            animation: slideRight 15s ease forwards;
+            font-size: 2em;
+        }
+
+        .mainmenu .description-text {
+            position: absolute;
+            top: 400px;; /* Position the description text below the header text */
+            left: 6%; /* Position the text horizontally at the center */
+            color: white; /* Set the text color */
+            font-size: 20px; /* Adjust the font size as needed for the description text */
+            font-family: 'Raleway',
+            max-width: 500px;
+            width: 50%;
+            animation: slideRight 15s ease forwards;
+        }
+
+        .mainmenu img{
+            display: block;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .mainmenu .overlay-img{
+            position: absolute;
+            top: 140px; /* Position the description text below the header text */
+            left: 6%; /* Position the text horizontally at the center */
+            display: block;
+            width: 25%;
+            z-index: 1000;
+            animation: slideRight 15s ease forwards;
+        }
+
+        .mainmenu .portfolio-img{
+            position: absolute;
+            top: 270px; /* Position the description text below the header text */
+            left: 6%; /* Position the text horizontally at the center */
+            display: block;
+            width: 15%;
+            z-index: 1000;
+            animation: slideRight 15s ease forwards;
+        }
+
+        @keyframes slideBottom {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1
+        {
+            font-family: 'Archivo Narrow';
+            font-size: 38px;
+            text-align: left;
+            margin-left: 30px; /* Adjust the margin as needed */
+            margin-bottom:0px;
+        }
+
+        h3
+        {
+            font-family: 'Archivo Narrow';
+            text-align: center;
+        }
+
+        .row-portfolio,.row-profile
+        {
+            display: flex;
+        }
+
+        .portfolio-works
+        {
+            flex: 0 0 33.33%;
+            overflow: hidden; /* hides the other profile*/
+            transition: transform 2.0s ease; /* Add a smooth transition effect */
+        }
+
+        #prevWorkButton
+        {
+            position: absolute;
+            left: 0;
+            top: 245%; /* Adjust as needed */
+            transform: translateY(100%); /* Center vertically */
+        }
+
+        #nextWorkButton
+        {
+            position: absolute;
+            right: 0;
+            top: 245%; /* Adjust as needed */
+            transform: translateY(100%); /* Center vertically */
+        }
+
+        #prevWorkButton::before
+        {
+            content: '\2039'; /* Unicode character for left-pointing arrow */
+            font-size: 40px;
+        }
+
+        #nextWorkButton::after
+        {
+            content: '\203A'; /* Unicode character for right-pointing arrow */
+            font-size: 40px;
+        }
+
+        .col-6
+        {
+            box-sizing: border-box;
+            padding: 0px;
+        }
+
+        .box
+        {
+            text-align: center;
+            border: 3px solid black;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        .box-profile
+        {
+            background-color: black;
+            margin: 26px;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 4px;
+        }
+
+        .box-profile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            transition: opacity 0.2s ease-in-out; /* Add transition for filter property */
+        }
+
+        .box-profile img:hover {
+            opacity: 0.8;
+        }
+
+        .box img
+        {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .blind
+        {
+            clip: rect(0 0 0 0);
+            height: 1px;
+            left: 0;
+            margin: -1px;
+            position: absolute;
+            top: 0;
+            -webkit-user-select: none;
+            user-select: none;
+            width: 1px;
+        }
+
+        .employee-profile-button
+        {
+            background-color: transparent;
+            color: black;
+            padding: 10;
+            font-size: 16px;
+            border: none;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        #prevEmployeeButton
+        {
+            position: absolute;
+            left: 0;
+            top: 155%; /* Adjust as needed */
+            transform: translateY(-50%); /* Center vertically */
+        }
+
+        #nextEmployeeButton
+        {
+            position: absolute;
+            right: 0;
+            top: 155%; /* Adjust as needed */
+            transform: translateY(-50%); /* Center vertically */
+        }
+
+        #prevEmployeeButton::before
+        {
+            content: '\2039'; /* Unicode character for left-pointing arrow */
+            font-size: 40px;
+        }
+
+        #nextEmployeeButton::after
+        {
+            content: '\203A'; /* Unicode character for right-pointing arrow */
+            font-size: 40px;
+        }
+
+
+        button
+        {
+            background-color: black;
+            color: white;
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid white;
+            margin-bottom:2px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Archivo Narrow';
+        }
+
+        .employee-profile
+        {
+            overflow: hidden; /* hides the other profile*/
+            flex: 0 0 25%; /* Show 5 profiles at a time */
+            transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        button:hover
+        {
+            background-color: #F0B1A7;
+        }
+
+
+        .icons
+        {
+            list-style: none;
+        }
+
+        .icons li
+        {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .icons a
+        {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        footer
+        {
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px)
+        {
+
+        }
+
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+        <a href="/" class="header">
+            <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+        </a>
+
+        <div class="mainmenu">
+            <img id="mainmenu-gif" src="{{ url_for('static', filename='mainmenu.gif') }}" alt="Welcome to our Website" >
+
+            <!-- Overlay Image -->
+            <img src="{{ url_for('static', filename='mainmenulogo.png') }}" alt="Overlay Image"
+                  class="overlay-img">
+            <img src="{{ url_for('static', filename='mainmenuportfolio.png') }}" alt="Overlay Image"
+                  class="portfolio-img">
+
+            <!-- Text Overlays -->
+            <div class="overlay-text">Data Structure & Algorithm</div>
+            <div class="description-text">Presenting to you our portfolio in Data Structures and Algorithms. Applies all concepts including, Search Algorithm, Queue and Dequeue, Stack, Hash, etc.</div>
+        </div>
+
+    <br>
+    <br>
+
+    <h1> Group Members </h1>
+
+    <section class="employee-profile" id="employeeProfiles">
+        <div class="row-profile">
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='ella.png') }}" alt=""  /></span>
+                    <h3>Ella Mae Lumawag</h3>
+                    <p>Virgo</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/ellahome'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='ashanti.png') }}" alt="" /></span>
+                    <h3>Ashanti Villadiego</h3>
+                    <p>Libra</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/ashanti'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='mica.png') }}" alt="" /></span>
+                    <h3>Mica Salili</h3>
+                    <p>Sagittarius</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/mica'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='alijah.png') }}" alt="" /></span>
+                    <h3>Alijah Eugenio</h3>
+                    <p>Libra</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/alijahindex'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='kim.png') }}" alt="" /></span>
+                    <h3>Kimberly Isip </h3>
+                    <p>Virgo</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/kim'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='jera.png') }}" alt="" /></span>
+                    <h3>Jerameel Suyat</h3>
+                    <p>Aries</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/employee1'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower employee-profile ">
+                <section class="box-profile special">
+                    <span class="image featured"><img src="{{ url_for('static', filename='denise.png') }}" alt="" /></span>
+                    <h3>Anne Denise Tadeo</h3>
+                    <p>Job Title and Description</p>
+                    <ul class="actions special">
+                        <li><button onclick="window.location.href='/denise'" class="button alt">Learn More</button></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <button type="button" id="prevEmployeeButton" class="employee-profile-button">
+        <span class="blind">View previous employee</span>
+    </button>
+
+    <button type="button" id="nextEmployeeButton" class="employee-profile-button">
+        <span class="blind">View next employee</span>
+    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1> Group Works </h1>
+
+    <section class="portfolio-works" id="PortfolioWorks">
+        <div class="row-portfolio">
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/SearchAlgorithm">
+                        <span class="image featured"><img src="{{ url_for('static', filename='search algo.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Search Algorithm</h3>
+                    <p>To implement and compare the performance of various search algorithms on different data sets.</p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/Stack">
+                        <span class="image featured"><img src="{{ url_for('static', filename='stack.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Stack Linked List</h3>
+                    <p>Implement the Shunting Yard algorithm for Infix to postfix notation using Stack data structure</p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/Queue">
+                        <span class="image featured"><img src="{{ url_for('static', filename='Queue.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Queue</h3>
+                    <p>Implement Queue and De-que data structure using Linked list. </p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/Deque">
+                        <span class="image featured"><img src="{{ url_for('static', filename='Deque.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Deque</h3>
+                    <p>Implement Queue and De-que data structure using Linked list.</p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/Hash">
+                        <span class="image featured"><img src="{{ url_for('static', filename='hash.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Hash Table</h3>
+                    <p>The address or the index value of the data element is generated from a hash function.</p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/MRTGraph">
+                        <span class="image featured"><img src="{{ url_for('static', filename='MRT.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>MRT Shortest Path</h3>
+                    <p>Using the MRT lines, create a graph structure and solve the shortest path of going from one station to another.</p>
+                </section>
+            </div>
+
+            <div class="col-6 col-12-narrower portfolio-works">
+                <section class="box special">
+                    <a href="/sort">
+                        <span class="image featured"><img src="{{ url_for('static', filename='sort.gif') }}" alt="" /></span>
+                    </a>
+                    <h3>Sorting Algorithm</h3>
+                    <p>Research on the python implementation and explain the big O complexity for each sorting Algorithm.</p>
+                </section>
+            </div>
+
+        </div>
+    </section>
+
+    <button type="button" id="prevWorkButton" class="employee-profile-button">
+        <span class="blind">View previous work</span>
+    </button>
+
+    <button type="button" id="nextWorkButton" class="employee-profile-button">
+        <span class="blind">View next work</span>
+    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the GIF element
+            var gif = document.getElementById('mainmenu-gif');
+
+            // Pause the GIF initially
+            gif.pause();
+
+            // Play the GIF on mouseover
+            gif.addEventListener('mouseover', function () {
+                gif.play();
+            });
+
+            // Pause the GIF on mouseout
+            gif.addEventListener('mouseout', function () {
+                gif.pause();
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const profiles = document.querySelectorAll('.employee-profile');
+            const profileContainer = document.querySelector('.row-profile');
+            const prevButton = document.getElementById('prevEmployeeButton');
+            const nextButton = document.getElementById('nextEmployeeButton');
+
+            let currentIndex = 0;
+
+            function showProfile(index) {
+                const newPosition = -index * 25 + '%'; // Assuming each profile takes 25% width
+                profileContainer.style.transform = 'translateX(' + newPosition + ')';
+            }
+
+            function navigate(direction) {
+                currentIndex += direction;
+
+                // Adjust the index to wrap around if necessary
+                if (currentIndex < 0) {
+                    currentIndex = profiles.length - 4;
+                } else if (currentIndex > profiles.length - 4) {
+                    currentIndex = 0;
+                }
+
+                showProfile(currentIndex);
+            }
+
+            prevButton.addEventListener('click', () => navigate(-1));
+            nextButton.addEventListener('click', () => navigate(1));
+
+            showProfile(currentIndex);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const works = document.querySelectorAll('.portfolio-works');
+            const worksContainer = document.querySelector('.row-portfolio');
+            const prevWorkButton = document.getElementById('prevWorkButton');
+            const nextWorkButton = document.getElementById('nextWorkButton');
+
+            let currentIndex = 0;
+
+            function showWork(index) {
+                const newPosition = -index * 33 + '%'; // Assuming each work takes 33% width
+                worksContainer.style.transform = 'translateX(' + newPosition + ')';
+            }
+
+            function navigateWorks(direction) {
+                currentIndex += direction;
+
+                // Adjust the index to wrap around if necessary
+                if (currentIndex < 0) {
+                    currentIndex = works.length - 3;
+                } else if (currentIndex > works.length - 3) {
+                    currentIndex = 0;
+                }
+
+                showWork(currentIndex);
+            }
+
+            prevWorkButton.addEventListener('click', () => navigateWorks(-1));
+            nextWorkButton.addEventListener('click', () => navigateWorks(1));
+
+            showWork(currentIndex);
+        });
+
+    </script>
+
+
+</body>
+</html>

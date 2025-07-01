@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of a Circle Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .home {
+            width: 100px;
+            height: 40px;
+            background-color: lightpink;
+            text-align: center;
+            justify-content: center;
+        }
+
+        p {
+            margin-top: 9px;
+            margin-bottom: 0;
+            font-family: arial;
+        }
+
+        body {
+            background-color: #FACBEA;
+        }
+
+        .header-button {
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Poppins;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header-button:hover {
+            box-shadow: 0 0 3px #c19fb6;
+        }
+
+        .home, .profile, .works {
+            margin-right: 10px;
+        }
+
+        .works-button {
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #B0578D;
+            font-family: Poppins;
+        }
+
+        .left {
+            width: 500px;
+            background-color: #B0578D;
+            height: 533px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .right {
+            display: inline-block;
+            justify-content: center;
+            width: 700px;
+            height: 533px;
+            vertical-align: middle;
+        }
+
+        .text-box {
+            height: 150px;
+            width: 400px;
+            border-radius: 10px;
+            background-color: #F8DCEE;
+            margin-left: 150px;
+            margin-top: 5px;
+        }
+
+        .convert-button {
+            margin-top: 10px;
+            margin-left: 333px;
+            background-color: #F8DCEE;
+            border: 0;
+            font-family: Poppins;
+            border-radius: 3px;
+            font-size: 12px;
+            width: 70px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .convert-button:hover {
+            box-shadow: 0 0 3px #c19fb6;
+        }
+
+        .converted-string {
+            height: 150px;
+            width: 400px;
+            border-radius: 10px;
+            background-color: #F8DCEE;
+            font-family: Poppins;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div class="home">
+            <a href="/"><button class="header-button">
+                Home
+            </button> <a></a>
+        </div>
+        <div class="profile">
+            <a href="/kimprofile"><button class="header-button">
+                Profile
+            </button> <a></a>
+        </div>
+        <div class="works">
+            <a href="/kimworks"><button class="works-button">
+                Works
+            </button> <a></a>
+        </div>
+        <div class="contact">
+            <a href="/kimcontact"><button class="header-button">
+                Contact
+            </button> <a></a>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div style="vertical-align: middle;">
+        <div class="left">
+            <p style="
+                font-family: Poppins;
+                font-size: 60px;
+                font-weight: 700;
+                color: white;
+                padding-left: 50px;
+                margin-top: 60px;
+                ">
+                AREA OF A CIRCLE CALCULATOR
+            </p>
+            <p style="
+                font-family: Poppins;
+                font-size: 17px;
+                color: white;
+                padding-left: 50px;
+                margin-top: 50px;
+                ">
+                This program calculates the area of a circle.
+            </p>
+        </div>
+        <div class="right"> 
+            <form action="/kimarea-of-circle" method="post">
+                <label for="inputNum" style="
+                    font-family: Poppins;
+                    font-weight: 700;
+                    margin-left: 150px;
+                    
+                    ">
+                    Enter a number: 
+            </label>
+                <div class="text-box">
+                    <input type="number" id="inputNum" name="inputNum" 
+                    style="height: 150px;
+                    width: 400px;
+                    border-radius: 10px;
+                    background-color: #F8DCEE;
+                    border: 0;">
+
+                <input type="submit" value="Calculate"class="convert-button">
+               
+            </form>
+
+            <p style="
+                font-family: Poppins;
+                font-weight: 700;
+                margin-left: 0px;
+                margin-top: 50px;
+                ">
+                Area: 
+            </p>
+            
+            <div class="converted-string">
+                {% if result %}
+                <p style="
+                font-family: Poppins;"
+                >{{ result }}</p>
+                {% endif %}
+            </div>
+
+
+        </div>
+    </div>
+   
+</body>
+</html>

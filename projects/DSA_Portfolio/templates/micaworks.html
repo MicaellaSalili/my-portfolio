@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mica Works</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: arial;
+        }
+
+        /* Style the navigation bar */
+        nav {
+            background-color: #323031;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 25px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        nav a:hover {
+        color: #8C52FF;
+        }
+
+        /* Style the header and sections */
+        header, section {
+            padding: 0.1rem;
+        }
+
+        header {
+            background-color: #8C52FF;
+            text-align: center;
+        }
+
+        /* Style the project sections */
+        .project {
+            margin: 2rem;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            text-align: left;
+            max-width: 800px;
+
+        }
+        .project a {
+            text-decoration: none;
+            color: black;
+            display: block;
+
+        }
+        .project img {
+            width: 180px;
+            height: 140px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/mica" style="text-decoration: none;">Home</a></li>
+            <li><a href="/micaprofile">Profile</a></li>
+            <li><a href="/micaworks">Works</a></li>
+            <li><a href="/micacontact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>My Programming Works</h1>
+    </header>
+
+    <center>
+        <section id="works">
+
+            <div class="project">
+                <a href="/mica-uppercase_convert">
+                    <img src="{{ url_for('static', filename='toupper.gif') }}" alt="Converting to Uppercase Image">
+                    <h3>Convert to Uppercase</h3>
+                    <p>A program that converts a string to uppercase.</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="/mica-areaOfcircle">
+                    <img src="{{ url_for('static', filename='circle.gif') }}" alt="Circle Image">
+                    <h3>Area of a Circle </h3>
+                    <p>A program that computes the area of a circle by tempting the user to input the radius of a circle.</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="/mica-areaOftriangle">
+                    <img src="{{ url_for('static', filename='triangle.gif') }}" alt="Triangle Image">
+                    <h3>Area of Triangle</h3>
+                    <p>A program that computes the area of a circle by tempting the user to input the base and height of the triangle.</p>
+                </a>
+            </div>
+
+        </section>
+    </center>
+
+
+</body>
+</html>

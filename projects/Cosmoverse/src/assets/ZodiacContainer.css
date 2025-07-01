@@ -1,0 +1,20 @@
+.zodiac-container {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.zodiac-container:hover {
+  transform: scale(1.1);
+}
+
+.zodiac-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.zodiac-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #f39c12;
+}

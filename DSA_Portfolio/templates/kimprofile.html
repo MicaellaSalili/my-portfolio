@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .home {
+            width: 100px;
+            height: 40px;
+            background-color: lightpink;
+            text-align: center;
+            justify-content: center;
+        }
+
+        p {
+            margin-top: 9px;
+            margin-bottom: 0;
+            font-family: arial;
+        }
+
+        body {
+            background-color: #FACBEA;
+        }
+
+        .header-button {
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Poppins;
+
+        }
+
+        .header-button:hover {
+            box-shadow: 0 0 3px #c19fb6;
+        }
+
+        .home, .profile, .works {
+            margin-right: 10px;
+        }
+
+        .profile-button {  
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #B0578D;
+            font-family: Poppins;
+        }
+
+        .profile-icon{
+            display: inline-block;
+            height:370px;
+        }
+
+        .rectangle {
+            margin-top: 155px;
+            margin-left: 170px;
+            justify-content: center;
+            border-radius: 39px;
+            width: 900px;
+            height: 370px;
+            background-color: #FFEEF4;
+            position: absolute;
+        }
+
+        .profile-picture {
+            margin-left: 115px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div class="home">
+            <a href="/"><button class="header-button">
+                Home
+            </button> <a></a>
+        </div>
+        <div class="profile">
+            <a href="/kimprofile"><button class="profile-button">
+                Profile
+            </button> <a></a>
+        </div>
+        <div class="works">
+            <a href="/kimworks"><button class="header-button">
+                Works
+            </button> <a></a>
+        </div>
+        <div class="contact">
+            <a href="/kimcontact"><button class="header-button">
+                Contact
+            </button> <a></a>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        
+        <div class="rectangle">
+            <p style="
+                font-family: Poppins;
+                font-weight: 700;
+                padding-left: 330px;
+                font-size: 25px;
+                margin-bottom: 0px;
+                color: #BB9CC0;
+                margin-top: 40px;
+                ">
+                Hi, I am
+            </p>
+            <p style="
+                font-family: Poppins;
+                font-weight: 700;
+                margin-top: -10px;
+                padding-left: 330px;
+                font-size: 50px;
+                color: #B0578D;
+                ">
+                Kimberly Isip
+            </p>
+            <div style="
+                  background-color: #F8DCEE;
+                  margin-left: 330px;
+                  height: 150px;
+                  width: 500px;  
+                  border-radius: 39px;
+                  margin-top: 10px;
+                ">
+                <p style="font-family: Poppins;
+                        font-weight: 400;
+                        margin-top: -10px;
+                        width: 450px;
+                        font-size: 15px;
+                        color: #BB9CC0;
+                        padding-left: 30px;
+                        padding-top: 30px;">
+                    I am currently a 2nd-year student in Section 6, pursuing a Bachelor of Science in Computer Engineering at the Polytechnic University of the Philippines, Sta. Mesa. My favorite motto in life is "Do what scares you until it doesn't."
+                </p>
+            </div>
+        </div>
+
+        <div class="profile-picture">
+            <img src="{{url_for('static', filename='index_photo/profile-picture.png')}}" class="profile-icon">
+        </div>
+
+    </div>
+    
+</body>
+</html>

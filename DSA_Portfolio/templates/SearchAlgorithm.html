@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search Algorithms</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        body {
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Fix the background image while scrolling */
+            color: #000000; /* Set the default font color */
+            font-family: 'Raleway'
+        }
+
+        .header img.home {
+            top: 15px;
+            left: 18px;
+            display: block;
+            position: fixed;
+            z-index: 1000; /* Set a higher z-index to ensure it's above other elements */
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+        h1 {
+            font-family: Archivo Narrow;
+            font-size: 40px;
+            color: #FFFFFF;
+        }
+
+        p {
+            background-color: rgba(254, 126, 177, 0.6); /* Set the background color */
+            color: #FFFFFF; /* Set the text color */
+            border: 2px solid #000000; /* outside border */
+            padding: 13px; /* Add some padding around the text for better visibility */
+            width: 70%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the element horizontally */
+        }
+
+        label {
+            font-size: 24px;
+            font-family: Archivo Narrow;
+            /* margin-right: 700px; / / Remove this */
+            display: flex;
+            justify-content: center;
+            height: 5vh; /* Adjust this value as needed */
+            text-align: center; /* Align text to center */
+            color: white;
+        }
+
+        .Queue-illus
+        {
+            text-align: center;
+            display: flex;
+        }
+
+        .employee-profile
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .result-box {
+            background-color: white;
+            padding: 5px;
+            font-family: Archivo Narrow;
+            font-size: 50px;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            height:50px;
+            width:50px;
+            }
+
+        input[type="text"] {
+            background-color: #FE7EB1;
+            padding: 5px;
+            font-size: 16px;
+            color: #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            height:30px;
+            width:200px;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: #FE7EB1;
+            color: #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            cursor: pointer;
+            margin:2px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF408C;
+        }
+
+        .form-container {
+            text-align: center;
+
+        }
+
+        .form-select {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            width: 200px;
+            display: inline-block; /* Display the select box inline */
+            background-color: #FE7EB1;
+
+        }
+
+        /* Styling the dropdown arrow */
+        .form-select:after {
+            content: '\25BC';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        textarea.form-control {
+            width: 80%; /* Adjust width as needed */
+            max-width: 800px; /* Maximum width to maintain readability */
+            margin: 20 auto; /* Center the textarea horizontally */
+            background-color:white;
+            margin-left: auto; /* Set left margin to auto */
+            margin-right: auto; /* Set right margin to auto */
+            display: block;
+}
+
+        /* Styling the options */
+        .form-select option {
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+
+        /* Align button in center */
+        .form-btn {
+            margin-top: 10px; /* Adjust margin as needed */
+            display: inline-block; /* Display the button inline */
+            background-color: #FE7EB1
+        }
+        .alert {
+            text-align: center; /* Align text to center */
+            font-size: 20px; /* Enlarge font size */
+            color: white; /* Change text color to white */
+        }
+
+        .container {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            height: 840px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 100px; /* Adjust top margin as needed */
+        }
+
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+    <a href="/" class="header">
+        <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+    </a>
+<body>
+
+<div class="container">
+    <h1 class="mt-5"><center>Search Algorithms Comparison</center></h1>
+
+    <div class="form-container">
+        <label for="data_set_size" class="form-label">Choose Data Set Size</label>
+        <select class="form-select" id="data_set_size" name="data_set_size" onchange="updateTestData(this.value)">
+            <option value="">Select Data Set Size</option>
+            <option value="small">Small Data Set</option>
+            <option value="medium">Medium Data Set</option>
+            <option value="large">Large Data Set</option>
+        </select>
+    </div>
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="array" class="form-label">Array</label>
+            <textarea class="form-control" id="array" name="array" rows="20" required></textarea>
+        </div>
+        <div class="form-container">
+            <label for="target" class="form-label">Target</label>
+            <input type="text" class="form-control" id="target" name="target" placeholder="Enter the target integer" required>
+        </div>
+        <br>
+        <div class="form-container">
+            <select class="form-select mb-3" id="search_type" name="search_type">
+                <option value="linear">Linear Search</option>
+                <option value="binary">Binary Search</option>
+                <option value="ternary">Ternary Search</option>
+                <option value="exponential">Exponential Search</option>
+                <option value="interpolation">Interpolation Search</option>
+                <option value="jump">Jump Search</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-container">
+            <button type="submit" class="form-select">Search</button>
+        </div>
+    </form>
+    <br>
+    {% if result != None %}
+        <div class="alert alert-success mt-3" role="alert">
+            Target found at index {{ result }} using {{ search_type }} method in {{ execution_time }} milliseconds.
+        </div>
+    {% endif %}
+    {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="..."></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>
+
+<script>
+    function updateTestData(selectedSize) {
+        var testDataElement = document.getElementById("array");
+
+        // Use AJAX to fetch the updated test data based on the selected data set size
+        fetch("/get_test_data?size=" + selectedSize)
+            .then(response => response.text())
+            .then(data => {
+                testDataElement.value = data;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+</body>
+</html>

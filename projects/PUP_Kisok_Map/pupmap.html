@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive PUP Vicinity Map</title>
+    <link rel="icon" href="images/PUPLogo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <header class="header">
+      <h1>Interactive PUP Vicinity Map</h1>
+    </header>
+
+    <div class="map-container">
+      <img
+        src="images/stamesa.jpg"
+        alt="PUP Vicinity Map"
+        usemap="#pup-map"
+        id="pup-map-img"
+      />
+      <map name="pup-map" id="pup-map"></map>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <h2 id="modal-title"></h2>
+          <img id="modal-image" src="" alt="Location Image" />
+          <p id="modal-description"></p>
+      </div>
+  </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+  </body>
+</html>

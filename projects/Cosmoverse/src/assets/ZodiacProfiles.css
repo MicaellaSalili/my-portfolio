@@ -1,0 +1,39 @@
+/* src/assets/ZodiacProfiles.css */
+
+/* Container for all profiles */
+.profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual zodiac profile card */
+.profile-card {
+  background-color: rgba(19, 75, 112, 0.8);
+  color: #f4f4f4;
+  border-radius: 8px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for profile card */
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Zodiac sign name */
+.profile-card h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+/* Zodiac sign traits and compatibility */
+.profile-card p {
+  font-size: 1em;
+  margin: 5px 0;
+}

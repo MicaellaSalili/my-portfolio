@@ -1,0 +1,138 @@
+body {
+    font-size: 20px;
+}
+h1 , nav, div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+nav a {
+    margin-right: 5px; 
+}
+a:visited {
+    color: blue;
+}
+.css-version {
+    background-color: #3d2216;
+    color: #2c1b10;
+    font-family: Verdana, sans-serif;
+    text-align: 60%;
+    overflow: hidden;
+}
+.css-header {
+    background-color: #c5a16d;
+    color: black;
+    font-size: 36px;
+    text-indent: 48%;
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.css-nav {
+    background-color: #f3e5ab;
+    width: 300px;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.css-nav a {
+    display: block;
+    text-decoration: none;
+    padding: 36px;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px 0;
+}
+.css-nav a:hover {
+    background-color: #c5a16d;
+}
+.css-version #main-content div {
+    flex: 1;
+    padding-right: 20px;
+    align-items: 10%;
+}
+.css-version #main-content p,
+.css-version #main-content ul {
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+    margin-left: 5%;
+}
+.css-version #main-content img {
+    width: 180px;
+    height: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.css-version #main-content,
+.css-version #menu-section,
+.css-version #music-section,
+.css-version #jobs-section {
+    background-color: #f8ecc2;
+    padding: 20px;
+    margin-left: 350px;
+}
+.css-version #menu-section h2,
+.css-version #music-section h2,
+.css-version #jobs-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f06226;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.css-version #menu-section ul,
+.css-version #music-section ul,
+.css-version #jobs-section ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px;
+    list-style-type: none;
+    padding: 10;
+}
+.css-version #menu-section li,
+.css-version #music-section li,
+.css-version #jobs-section li {
+    background-color: #f3f3d4;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.css-version #menu-section img,
+.css-version #music-section img,
+.css-version #jobs-section img {
+    border-radius: 6px;
+    width: 80px;
+    height: 80px;
+}
+.css-version #menu-section b,
+.css-version #music-section b,
+.css-version #jobs-section b {
+    font-size: 18px;
+    color: #fa4b00;
+    font-weight: bold;
+}
+.css-version #footer {
+    background-color: #c49a6c;
+    color: #4e2504;
+    text-align: center;
+    padding: 12px;
+    border-top: 10px solid #3d2216;
+    font-size: 14px;
+}
+.css-version #footer a {
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+}
+.css-version #footer a:hover {
+    text-decoration: underline;
+}
+.css-version #footer p {
+    margin: 5px 0;
+}

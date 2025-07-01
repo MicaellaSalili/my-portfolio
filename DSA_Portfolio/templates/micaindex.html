@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mica</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: arial;
+        }
+
+        /* Style the navigation bar */
+        nav {
+            background-color: #323031;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 25px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        nav a:hover {
+        color: #8C52FF;
+        }
+
+        /* Style the header and sections */
+        header, section {
+            padding: 0.1rem;
+        }
+
+        header {
+            background-color: #8C52FF;
+            text-align: center;
+        }
+
+        .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 2rem;
+        }
+
+        .circle img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-right: 20px; /* Add some spacing between the image and text */
+        }
+
+        .circle h1 {
+            margin: 0;
+            size: 20;
+        }
+
+        .circle p {
+            margin: 0; /* Remove default margin for the paragraph */
+        }
+
+    </style>
+
+    <title>Personal Website</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/mica" style="text-decoration: none;">Home</a></li>
+            <li><a href="/micaprofile">Profile</a></li>
+            <li><a href="/micaworks">Works</a></li>
+            <li><a href="/micacontact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Welcome to My Website</h1>
+    </header>
+    <br><br>
+
+    <div class="circle">
+        <img src="{{ url_for('static', filename='1x1.jpg') }}" alt="Description of Image">
+        <div>
+            <h1>MICAELLA SALILI</h1>
+            <p>Computer Engineering Student</p>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Infix to Postfix Converter</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        body {
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Archivo Narrow';
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header img.home {
+            margin-left:15px;
+            margin-top:15px;
+            display: block;
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+        .title-header {
+            margin-top: 20vh; /* Adjust the top margin as needed */
+        }
+
+        .title-header h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+            form-container {
+            text-align: center; /* Align items in the center horizontally */
+
+        }
+        .form-select {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            width: 200px;
+            display: inline-block; /* Display the select box inline */
+            background-color: #FE7EB1;
+
+        }
+
+        .form-button {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            background-color: #FE7EB1;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+}
+
+        .form-button:hover {
+            background-color: #FF408C;
+}
+
+        .form-infi {
+            padding: 0px 12px;
+            font-size: 16px;
+            border: 2px  white;
+            border: none;
+            border-radius: 4px;
+            width: 500px;
+            height: 200px;
+            font-size: 30px;
+            display: inline-block;
+            background-color: #FE7EB1;
+            box-sizing: border-box;
+            box-shadow: 0 0 100px 30px rgba(255, 255, 255, 0.5);
+
+}
+        .form-last {
+            padding: 8px 12px;
+            font-size: 30px;
+            border-radius: 4px;
+            width: 60%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            justify-content: center;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.5);
+        }
+        .form-font {
+            font-size: 50px;
+        }
+        .form-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: black;
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 60px;
+            width: 60%;
+            margin-left: auto; /* Set left margin to auto for horizontal centering */
+            margin-right: auto;
+        }
+
+
+    </style>
+</head>
+</body>
+<div class="layer-background"></div>
+<a href="/" class="header">
+        <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+    </a>
+    <div class="container">
+        <div class="form-infi">
+            <h1 class="form-font">Infix to Postfix</h1>
+            <form method="post" action="/stackconvert">
+                <label for="infix_expression">Enter Infix Expression:</label>
+                <input type="text" name="infix_expression" required>
+
+        </div>
+        <br>
+        <br>
+        <div class="form-container">
+            <button type="submit" class="form-button">Convert</button>
+        </form>
+        </div>
+
+        {% if infix_expression %}
+        <h3>Input Infix Expression:</h3>
+        <p class="form-last">{{ infix_expression }}</p>
+        <h3>Postfix Expressions:</h3>
+        <ul>
+            {% for postfix in postfix_expressions %}
+            <li class="form-last">{{ postfix }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+
+
+</div>
+</body>
+</html>

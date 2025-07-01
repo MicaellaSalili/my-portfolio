@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lunan Booking</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+      <div class="container">
+    
+        <!-- Booking Form Page -->
+        <div id="bookingPage">
+          <h1>Study Place Booking</h1>
+          <form id="bookingForm" form action="db.php" method="POST">
+            <!-- All your fields -->
+            <label for="firstName">First Name: <span style="color: red;">*</span></label>
+            <input type="text" id="firstName" required />
+    
+            <label for="lastName">Last Name: <span style="color: red;">*</span></label>
+            <input type="text" id="lastName" required />
+    
+            <label for="datetime">Date and Time: <span style="color: red;">*</span></label>
+            <input type="datetime-local" id="datetime" required />
+    
+            <label for="email">Email: <span style="color: red;">*</span></label>
+            <input type="email" id="email" required />
+    
+            <label for="phone">Phone Number: <span style="color: red;">*</span></label>
+            <input type="tel" id="phone" required pattern="[0-9]{10,15}" />
+  
+            <label for="hours">Number of Hours: <span style="color: red;">*</span></label>
+            <select id="hours" required>
+              <option value="">-- Select Option --</option>
+              <option value="1">1 Hour</option>
+              <option value="2">2 Hours</option>
+              <option value="3">3 Hours</option>
+              <option value="5">5 Hours</option>
+              <option value="8">8 Hours</option>
+            </select>
+    
+            <label for="notes">Notes:</label>
+            <textarea id="notes" rows="3" placeholder="Optional..."></textarea>
+    
+            <button type="submit">Proceed to Payment</button>
+          </form>
+        </div>
+    
+        <!-- Payment Page -->
+        <div id="paymentPage" class="hidden">
+          <h1>Select Payment Method</h1>
+          <form id="paymentForm" form action="db.php" method="POST">
+            <label for="method">Payment Method: <span style="color: red;">*</span></label>
+            <select id="method" required>
+              <option value="">-- Choose Method --</option>
+              <option value="gcash">GCash</option>
+              <option value="maya">Maya</option>
+              <option value="seabank">Seabank</option>
+              <option value="card">Credit/Debit Card</option>
+            </select>
+    
+            <div id="cardTypeContainer" class="hidden">
+              <label for="cardType">Card Type:</label>
+              <select id="cardType">
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+              </select>
+            </div>
+    
+            <div id="paymentDetails"></div>
+    
+            <button type="submit">Submit Payment</button>
+          </form>
+        </div>
+    
+        <!-- Booking Ticket -->
+        <div id="ticket" class="hidden">
+          <h2>Booking Ticket</h2>
+          <p><strong>Name:</strong> <span id="ticketName"></span></p>
+          <p><strong>Date & Time:</strong> <span id="ticketDateTime"></span></p>
+          <p><strong>Status:</strong> <span id="ticketStatus">Pending</span></p>
+          <p><strong>Payment Method:</strong> <span id="ticketPaymentMethod"></span></p>
+        </div>        
+
+        <div id="confirmation" class="hidden"></div>
+      </div>
+    
+      <script src="script.js"></script>
+    </body>
+</html>
+
+

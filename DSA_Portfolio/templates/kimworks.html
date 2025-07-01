@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Works</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .home {
+            width: 100px;
+            height: 40px;
+            background-color: lightpink;
+            text-align: center;
+            justify-content: center;
+        }
+
+        p {
+            margin-top: 9px;
+            margin-bottom: 0;
+            font-family: arial;
+        }
+
+        body {
+            background-color: #FACBEA;
+        }
+
+        .header-button {
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Poppins;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header-button:hover {
+            box-shadow: 0 0 3px #c19fb6;
+        }
+
+        .home, .profile, .works {
+            margin-right: 10px;
+        }
+
+        .works-button {
+            width: 100px;
+            height: 40px;
+            background-color: #FACBEA;
+            border:0;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #B0578D;
+            font-family: Poppins;
+        }
+
+        .header-text {
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 40px;
+            color: white;
+            font-family: Poppins;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: 230px 230px 230px;
+            column-gap: 70px;
+            width: 1000px;
+            justify-content: center;
+            margin-top: 30px;
+            
+        }
+
+        .individual-grid {
+            background-color: #FFEEF4;
+            height: 250px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 6px rgb(96, 96, 96);
+
+        }
+
+        .individual-grid:hover{
+            box-shadow: 0 0 6px #FFEEF4;
+        }
+
+        .grid-image {
+            width: 160px;
+            border-radius: 15px;
+            height: 160px;
+            object-fit: cover;
+            object-position: center;
+            margin-top: 35px;
+            display: inline-block;
+            margin-left: 35px;
+        }
+
+        .rectangle {
+            width: 1000px;
+            height: 300px;
+            margin-left: 120px;
+            margin-right: 0;
+            background: linear-gradient(135deg, #B0578D 0%, #E9C8FF 100%);
+            border-radius: 45px;
+            margin-top: 20px;
+            justify-content: center;
+            box-shadow: 0 0 4px rgb(96, 96, 96);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div class="home">
+            <a href="/"><button class="header-button">
+                Home
+            </button> <a></a>
+        </div>
+        <div class="profile">
+            <a href="/kimprofile"><button class="header-button">
+                Profile
+            </button> <a></a>
+        </div>
+        <div class="works">
+            <a href="/kimworks"><button class="works-button">
+                Works
+            </button> <a></a>
+        </div>
+        <div class="contact">
+            <a href="/kimcontact"><button class="header-button">
+                Contact
+            </button> <a></a>
+        </div>
+    </div>
+
+    <div class="rectangle">
+        <p class="header-text">
+            &#9734; MY WORKS &#9734;
+        </p>
+
+        <div class="grid">
+            <a href="/kimto-upper-case"><div class="individual-grid">
+                <img src="{{url_for('static', filename='index_photo/uppercase-icon.png')}}" class="grid-image">
+                <p style="
+                    text-align: center;
+                    color: black;
+                    font-weight: bold;
+                    margin-top: 17px;
+                ">
+                    To Uppercase
+                </p>
+
+            </div></a>
+
+            <a href="/kimarea-of-circle">
+                <div class="individual-grid">
+                <img src="{{url_for('static', filename='index_photo/circle-icon.png')}}" class="grid-image">
+                <p style="
+                    text-align: center;
+                    color: black;
+                    font-weight: bold;
+                    margin-top: 17px;
+                ">
+                    Area of Circle
+                </p>
+                </div>
+            </a>
+
+            <a href="/kimarea-of-triangle">
+                <div class="individual-grid">
+                <img src="{{url_for('static', filename='index_photo/triangle-icon.png')}}" class="grid-image">
+                <p style="
+                    text-align: center;
+                    color: black;
+                    font-weight: bold;
+                    margin-top: 17px;
+                ">
+                    Area of Triangle
+                </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <script src="script.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,700&family=PT+Sans&display=swap');
+
+    body {
+      background: linear-gradient(to bottom, #421dc7 ,#1d5dc7 );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .main-container {
+      width: 50vw;
+      height: 70vh;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto;
+      justify-content: center;
+      background: rgba(212, 14, 247, 0.285);
+      padding: 2em;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h3 {
+      font-family: 'Arial', sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .status-head-wrapper {
+      grid-column: 1 / span 3;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .status-head-wrapper h1 {
+      font-family: 'Arial', sans-serif;
+      font-size: 5em;
+      margin: 0;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-button-wrapper {
+      grid-row: 3;
+      grid-column: 1 / span 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    button {
+      background: #5e1dc7;
+      color: white;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 1em 2em;
+      font-family: "font-family", Monaco, monospace;
+      font-size: 1em;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      border: 2px solid white;
+      background: #1d28c7;
+      transform: scale(1.05);
+    }
+
+    .move-display {
+      grid-row: 4;
+      grid-column: 1 / span 3;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0);
+    }
+
+    @media (max-width: 1000px) {
+      .main-container {
+        width: 80vw;
+        height: auto;
+        padding: 1.5em;
+      }
+
+      .status-head-wrapper h1 {
+        font-size: 3em;
+      }
+
+      .move-display {
+        font-size: 1.2em;
+      }
+
+      button {
+        padding: 1em;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3 id="title-small">Rock 👊 Paper 🤚 Scissors ✌️</h3>
+  <div class="main-container">
+    <span class="status-head-wrapper">
+      <h1 id="status-head"></h1>
+    </span>
+    <div class="move-display">
+      <h2></h2>
+      <h2></h2>
+    </div>
+    <div class="game-button-wrapper">
+      <button id="rock-button" type="button">Rock</button>
+      <button id="paper-button" type="button">Paper</button>
+      <button id="scissors-button" type="button">Scissors</button>
+    </div>
+  </div>
+</body>
+
+</html>

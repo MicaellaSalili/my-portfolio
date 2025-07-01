@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Table - Lab 4</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        body {
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Fix the background image while scrolling */
+            color: #FFF8ED; /* Set the default font color */
+            font-family: 'Raleway';
+            font-size: 16px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header img.home {
+            top:15px;
+            left:15px;
+            position: fixed;
+            display: block;
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+        .container {
+            width: 40%;
+            margin-top: 60px;
+            margin-left:20px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            height: 10%;
+            width: 40%;
+            margin-top: 60px;
+            margin-left:0px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: white;
+            font-family: 'Archivo Narrow';
+            font-size:20px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        select, input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea
+        {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Archivo Narrow';
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: pink;
+            color: white;
+        }
+
+        .stack {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .stack-item {
+            background-color: pink;
+            margin: 2px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/" class="header">
+        <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+    </a>
+
+    <div class="form-container">
+        <h1>HASH TABLE</h1>
+
+        <form method="post" action="/Hash">
+            <label for="hash_function">Select Hash Function:</label>
+            <select name="hash_function">
+                <option value="1">Hash Function 1</option>
+                <option value="2">Hash Function 2</option>
+                <option value="3">Hash Function 3</option>
+            </select>
+
+            <br><br>
+
+            <label for="num_commands">Number of Commands:</label>
+            <input type="number" name="num_commands" required>
+
+            <br><br>
+
+            <label for="commands">Commands (one per line):</label>
+            <textarea name="commands" rows="10" cols="30" required></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>OUTPUT</h2>
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Slot Contents</th>
+            </tr>
+            {% for index in range(hash_table|length) %}
+                <tr>
+                    <td>{{ index }}</td>
+                    <td>
+                        <ul class="stack">
+                            {% for element in hash_table[index] %}
+                                <li class="stack-item">{{ element }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

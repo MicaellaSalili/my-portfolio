@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micaella Salili - Portfolio</title>
     <link rel="icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,27 +21,43 @@
 
     <!-- Home Section -->
     <section id="home">
-        <div class="home-content">
-            <div class="profile-image">
-                <img src="images/profile.jpg" alt="Micaella Salili">
-                <h1>Hi, I'm</h1>
-                <h1><span>Micaella Salili</span></h1>
-                <h3>Web Developer</h3>
+        <div class="home-container">
+            <div class="home-text-section">
+                <div class="home-greeting">Hello, It's Me</div>
+                <h1 class="home-name">Micaella Salili</h1>
+                <div class="home-role">And I'm a <span class="role-highlight">Web Developer</span></div>
+                <p class="home-description">
+                    I build intuitive user interfaces with a touch of creative design. 
+                    Passionate about turning ideas into reality through code and creating 
+                    digital experiences that make a difference.
+                </p>
+                
+                <div class="home-social-links">
+                    <a href="https://www.facebook.com/micasalili/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/micaella-salili-8245891b3/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/heiimics/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/MicaellaSalili" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                <div class="home-cta">
+                    <button class="download-cv-btn" onclick="window.open('documents/Micaella_Salili_Resume.pdf', '_blank')">Download RESUME</button>
+                </div>
             </div>
-            <div class="home-text">
-                <div class="desc">
-                    <em>I build websites intuitive user interfaces with a touch of creative design.</em><br>
-                    Turning ideas into reality through code.
-                </div>
-                <div class="gradient-line"></div>
-                <div class="home-buttons">
-                    <button>View My Work</button>
-                    <button>Contact Me</button>
-                </div>
-                <div class="home-links">
-                    <a href="#">Github</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Resume</a>
+            
+            <div class="home-image-section">
+                <div class="hexagon-container">
+                    <div class="hexagon-glow"></div>
+                    <div class="hexagon-frame">
+                        <img src="images/profile.jpg" alt="Micaella Salili" class="profile-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,58 +65,288 @@
 
     <!-- About Section -->
     <section id="about">
-        <div class="about-header">
-            <h1>About Me</h1>
-            <div class="about-desc">
-                A Computer Engineering student with a passion for web development and UI/UX design. I enjoy building responsive websites and creative digital experiences that are both functional and user-friendly.
-            </div>
-        </div>
+        
         <div class="skills-section">
-            <div class="skills-tabs">
-                <button class="active" data-tab="technical"><span>Technical</span> <span class="tab-secondary">Skills</span></button>
-                <button data-tab="certifications"><span>Credentials &</span> <span class="tab-secondary">Certifications</span></button>
-                <button data-tab="frontend"><span>Frontend</span> <span class="tab-secondary">Skills</span></button>
-                <button data-tab="backend"><span>Backend</span> <span class="tab-secondary">Skills</span></button>
-                <button data-tab="soft"><span>Soft</span> <span class="tab-secondary">Skills</span></button>
-            </div>
+            
+            <h1>About Me</h1>
             <div class="gradient-line"></div>
-            <div class="skills skills-technical">
-                <div class="skill"><img src="github-icon.png" alt="GitHub"><div class="skill-title">GitHub</div></div>
-                <div class="skill"><img src="autocad-icon.png" alt="AutoCAD"><div class="skill-title">AutoCAD</div></div>
-                <div class="skill"><img src="arduino-icon.png" alt="Arduino"><div class="skill-title">Arduino/Sketching</div></div>
-                <div class="skill"><img src="packettracer-icon.png" alt="Packet Tracer"><div class="skill-title">Packet Tracer</div></div>
-                <div class="skill"><img src="office-icon.png" alt="Microsoft Office"><div class="skill-title">Microsoft Office</div></div>
-                <div class="skill"><img src="powerdirector-icon.png" alt="PowerDirector"><div class="skill-title">PowerDirector</div></div>
-                <div class="skill"><img src="obs-icon.png" alt="OBS Studio"><div class="skill-title">OBS Studio</div></div>
+            
+            <!-- About Me Content -->
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Micaella Salili, a passionate web developer currently pursuing a Bachelor of Science in Computer Engineering at Polytechnic University of the Philippines – Manila. I have a strong foundation in both front-end and back-end technologies, and I enjoy creating intuitive user interfaces and building applications that solve real-world problems.</p>
+                </div>
+                
+                <!-- Education & Experience -->
+                <div class="about-details">
+                    <div class="about-column">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4>Bachelor of Science in Computer Engineering</h4>
+                            <p class="institution">Polytechnic University of the Philippines – Manila</p>
+                            <p class="duration">2022 – Present</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Senior High School - STEM</h4>
+                            <p class="institution">Arellano University – Manila</p>
+                            <p class="duration">2020 – 2022</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Junior High School</h4>
+                            <p class="institution">Ramon Magsaysay (Cubao) High School – Quezon City</p>
+                            <p class="duration">2016 – 2020</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-column">
+                        <h3>Experience</h3>
+                        <div class="experience-item">
+                            <h4>Web Development Intern</h4>
+                            <p class="company">Visible Team OPC</p>
+                            <p class="location">Parañaque City, Philippines</p>
+                            <p class="duration">AUG - SEP 2024</p>
+                            <ul>
+                                <li>Worked on development, collaboration in testing, and debugging</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Organizational Experience</h3>
+                        <div class="experience-item">
+                            <h4>Marketing Associate</h4>
+                            <p class="company">PUP Manila Microsoft Student Community (PMMSC)</p>
+                            <p class="duration">2024 – Present</p>
+                            <ul>
+                                <li>Analyzed trends and preferences to improve engagement</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <h4>DevSkolar</h4>
+                            <p class="company">The PUP Programmer's Guild (TPG)</p>
+                            <p class="duration">2024 – Present</p>
+                            <ul>
+                                <li>Engaged in coding events and workshops to strengthen technical skills</li>
+                                <li>Participated in structured learning and community collaboration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skills skills-certifications" style="display:none;">
-                <div class="skill"><div class="skill-title">Certifications</div><div class="skill-desc">To follow</div></div>
+            
+            <!-- Horizontal Line -->
+            <div class="gradient-line"></div>
+            
+            <div class="skills-tabs">
+                <button class="active" data-tab="programming"><span>Programming</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="technical"><span>Technical</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="soft"><span>Soft</span> <span class="tab-secondary">Skills</span></button>
+                <button data-tab="certifications"><span>Credentials &</span> <span class="tab-secondary">Certifications</span></button>
             </div>
-            <div class="skills skills-frontend" style="display:none;">
-                <div class="skill"><img src="react-icon.png" alt="React JS"><div class="skill-title">React JS</div></div>
-                <div class="skill"><img src="vue-icon.png" alt="Vue JS"><div class="skill-title">Vue JS</div></div>
-                <div class="skill"><img src="html-icon.png" alt="HTML"><div class="skill-title">HTML</div></div>
-                <div class="skill"><img src="tailwind-icon.png" alt="Tailwind/CSS"><div class="skill-title">Tailwind/CSS</div></div>
-                <div class="skill"><img src="js-icon.png" alt="JavaScript"><div class="skill-title">JavaScript</div></div>
-                <div class="skill"><img src="reactnative-icon.png" alt="React Native"><div class="skill-title">React Native</div></div>
-                <div class="skill"><img src="cordova-icon.png" alt="Apache Cordova"><div class="skill-title">Apache Cordova</div></div>
-                <div class="skill"><img src="android-icon.png" alt="Android Development"><div class="skill-title">Android Development</div></div>
-                <div class="skill"><img src="figma-icon.png" alt="Figma"><div class="skill-title">Figma & Sketch</div></div>
-                <div class="skill"><img src="wordpress-icon.png" alt="WordPress"><div class="skill-title">WordPress</div></div>
-                <div class="skill"><img src="canva-icon.png" alt="Canva"><div class="skill-title">Canva</div></div>
-            </div>
-            <div class="skills skills-backend" style="display:none;">
-                <div class="skill"><img src="python-icon.png" alt="Python"><div class="skill-title">Python</div></div>
-                <div class="skill"><img src="php-icon.png" alt="PHP MySQL"><div class="skill-title">PHP MySQL</div></div>
-                <div class="skill"><img src="sql-icon.png" alt="SQL"><div class="skill-title">SQL</div></div>
-                <div class="skill"><img src="postman-icon.png" alt="Postman API"><div class="skill-title">Postman API</div></div>
-                <div class="skill"><img src="phpmyadmin-icon.png" alt="phpMyAdmin"><div class="skill-title">phpMyAdmin</div></div>
-                <div class="skill"><img src="cordova-cli-icon.png" alt="Cordova CLI"><div class="skill-title">Cordova CLI</div></div>
-            </div>
-            <div class="skills skills-soft" style="display:none;">
-                <div class="skill"><div class="skill-title">Time management and organizational skills</div></div>
-                <div class="skill"><div class="skill-title">Leadership and ability to work efficiently in projects</div></div>
-                <div class="skill"><div class="skill-title">Written and verbal communication skills</div></div>
+            
+            <div class="skills-container">
+                <button class="skills-nav-btn skills-nav-left" onclick="scrollSkills('left')">‹</button>
+                <div class="skills-wrapper">
+                    <div class="skills skills-programming">
+                        <div class="skill">
+                            <a href="https://reactjs.org/" target="_blank">
+                                <img src="images/reactjs.png" alt="React JS">
+                                <div class="skill-title">React JS</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://vuejs.org/" target="_blank">
+                                <img src="images/vuejs.png" alt="Vue JS">
+                                <div class="skill-title">Vue JS</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.python.org/" target="_blank">
+                                <img src="images/python.png" alt="Python">
+                                <div class="skill-title">Python</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+                                <img src="images/html.png" alt="HTML">
+                                <div class="skill-title">HTML</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+                                <img src="images/css.png" alt="CSS">
+                                <div class="skill-title">CSS</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+                                <img src="images/javascript.png" alt="JavaScript">
+                                <div class="skill-title">JavaScript</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://reactnative.dev/" target="_blank">
+                                <img src="images/reactnative.png" alt="React Native">
+                                <div class="skill-title">React Native</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://cplusplus.com/" target="_blank">
+                                <img src="images/ctt.png" alt="C++">
+                                <div class="skill-title">C++</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.php.net/" target="_blank">
+                                <img src="images/php.png" alt="PHP">
+                                <div class="skill-title">PHP</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://developer.android.com/" target="_blank">
+                                <img src="images/android.png" alt="Android Development">
+                                <div class="skill-title">Android Development</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.r-project.org/" target="_blank">
+                                <img src="images/r.png" alt="R Programming">
+                                <div class="skill-title">R Programming</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.w3schools.com/sql/" target="_blank">
+                                <img src="images/SQL.png" alt="SQL">
+                                <div class="skill-title">SQL</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="skills skills-technical" style="display:none;">
+                        <div class="skill">
+                            <a href="https://wordpress.org/" target="_blank">
+                                <img src="images/wordpress.png" alt="WordPress">
+                                <div class="skill-title">WordPress</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://github.com/" target="_blank">
+                                <img src="images/github.png" alt="GitHub">
+                                <div class="skill-title">GitHub</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.phpmyadmin.net/" target="_blank">
+                                <img src="images/phpmyadmin.png" alt="phpMyAdmin">
+                                <div class="skill-title">phpMyAdmin</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.postman.com/" target="_blank">
+                                <img src="images/postman.png" alt="Postman API">
+                                <div class="skill-title">Postman API</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.autodesk.com/products/autocad/" target="_blank">
+                                <img src="images/autocad.png" alt="AutoCAD">
+                                <div class="skill-title">AutoCAD</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.figma.com/" target="_blank">
+                                <img src="images/figma.png" alt="Figma and Sketch">
+                                <div class="skill-title">Figma and Sketch</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-office" target="_blank">
+                                <img src="images/msoffice.png" alt="Microsoft Office">
+                                <div class="skill-title">Microsoft Office</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.canva.com/" target="_blank">
+                                <img src="images/canva.png" alt="Canva">
+                                <div class="skill-title">Canva</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://www.cyberlink.com/products/powerdirector-video-editing-software/" target="_blank">
+                                <img src="images/powerdirector.png" alt="PowerDirector">
+                                <div class="skill-title">PowerDirector</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://obsproject.com/" target="_blank">
+                                <img src="images/obs.png" alt="OBS Studio">
+                                <div class="skill-title">OBS Studio</div>
+                            </a>
+                        </div>
+                        <div class="skill">
+                            <a href="https://cordova.apache.org/" target="_blank">
+                                <img src="images/cordova.png" alt="Cordova CLI">
+                                <div class="skill-title">Cordova CLI</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="skills skills-soft" style="display:none;">
+                        <div class="skill">
+                            <img src="images/skill1.png" alt="Time management">
+                            <div class="skill-title">Time management and organizational skills</div>
+                        </div>
+                        <div class="skill">
+                            <img src="images/skill2.png" alt="Leadership">
+                            <div class="skill-title">Leadership and ability to work efficiently in projects</div>
+                        </div>
+                        <div class="skill">
+                            <img src="images/skill3.png" alt="Communication">
+                            <div class="skill-title">Written and verbal communication skills</div>
+                        </div>
+                    </div>
+                    <div class="skills skills-certifications" style="display:none;">
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Basic Javascript for Web Development.pdf', 'Basic Javascript for Web Development')">
+                                <img src="certificates/Cert1.png" alt="Basic Javascript for Web Development">
+                                <div class="skill-title">Basic Javascript for Web Development</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/CCNA - Introduction to Networks.pdf', 'CCNA - Introduction to Networks')">
+                                <img src="certificates/Cert2.png" alt="CCNA - Introduction to Networks">
+                                <div class="skill-title">CCNA - Introduction to Networks</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Cloud Computing Fundamentals.pdf', 'Cloud Computing Fundamentals')">
+                                <img src="certificates/Cert3.png" alt="Cloud Computing Fundamentals">
+                                <div class="skill-title">Cloud Computing Fundamentals</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Fundamentals of Javascript through rock-paper-scissors.pdf', 'Fundamentals of Javascript')">
+                                <img src="certificates/Cert4.png" alt="Fundamentals of Javascript">
+                                <div class="skill-title">Fundamentals of Javascript through rock-paper-scissors</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Get Started with Figma.pdf', 'Get Started with Figma')">
+                                <img src="certificates/Cert5.png" alt="Get Started with Figma">
+                                <div class="skill-title">Get Started with Figma</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Intro to SQL.png', 'Intro to SQL')">
+                                <img src="certificates/Intro to SQL.png" alt="Intro to SQL">
+                                <div class="skill-title">Intro to SQL</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div onclick="openCertificate('certificates/Programming for Beginners Using Python Certificate.pdf', 'Programming for Beginners Using Python')">
+                                <img src="certificates/Cert6.png" alt="Programming for Beginners Using Python">
+                                <div class="skill-title">Programming for Beginners Using Python</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="skills-nav-btn skills-nav-right" onclick="scrollSkills('right')">›</button>
             </div>
         </div>
     </section>
@@ -110,36 +357,89 @@
             <div class="works-header-row">
                 <h1>Projects</h1>
                 <div class="works-links">
-                    <span>
-                        <a href="https://drive.google.com/your-gdrive-link" target="_blank" class="portfolio-link-highlight">Portfolio</a> of Works
-                    </span>
-                    <span>
-                        <a href="https://github.com/your-github-link" target="_blank" class="github-link-highlight">Works</a> on GitHub
-                    </span>
+                    <button onclick="window.open('https://drive.google.com/drive/folders/1tpn4SitYq85tZrsEG4PWr63advqiJpMx?usp=drive_link', '_blank')" class="works-btn portfolio-btn">
+                        📁 View Portfolio
+                    </button>
+                    <button onclick="window.open('https://github.com/MicaellaSalili', '_blank')" class="works-btn github-btn">
+                        🔗 GitHub Repository
+                    </button>
                 </div>
             </div>
             <div class="works-gradient-line"></div>
         </div>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="project1.png" alt="Project 1">
-                <div class="project-desc">Description of Project 1</div>
-                <div class="project-title">Project 1</div>
+                <a href="projects/PUP_Kisok_Map/pupmap.html" target="_blank">
+                    <img src="images/Object1.png" alt="PUP Kiosk Map">
+                    <div class="project-desc">A PUP Kiosk Interactive Vicinity Map</div>
+                    <div class="project-title">PUP Kiosk Map</div>
+                </a>
+            </div>
+    
+            <div class="project-card">
+                <a href="projects/PUP_Hymn_Webiste/PUP_Hymn.html" target="_blank">
+                    <img src="images/Object5.png" alt="PUP Hymn">
+                    <div class="project-desc">A PUP Hymn project featuring lyrics and audio</div>
+                    <div class="project-title">PUP Hymn Website</div>
+                </a>
             </div>
             <div class="project-card">
-                <img src="project2.png" alt="Project 2">
-                <div class="project-desc">Description of Project 2</div>
-                <div class="project-title">Project 2</div>
+                <a href="projects/Calculator/index.html" target="_blank">
+                    <img src="images/Object1.png" alt="Calculator">
+                    <div class="project-desc">Basic and Standard Calculator Project</div>
+                    <div class="project-title">Calculator</div>
+                </a>
             </div>
             <div class="project-card">
-                <img src="project3.png" alt="Project 3">
-                <div class="project-desc">Description of Project 3</div>
-                <div class="project-title">Project 3</div>
+                <a href="projects/Coffee_Shop/coffee_shop.html" target="_blank">
+                    <img src="images/Object2.png" alt="Coffee Shop">
+                    <div class="project-desc">Coffee shop page with an HTML version and a styled CSS version</div>
+                    <div class="project-title">Coffee Shop Website</div>
+                </a>
             </div>
             <div class="project-card">
-                <img src="project4.png" alt="Project 4">
-                <div class="project-desc">Description of Project 4</div>
-                <div class="project-title">Project 4</div>
+                <a href="projects/Rock-Paper-Scissors_Game/index.html" target="_blank">
+                    <img src="images/Object3.png" alt="Rock Paper Scissors">
+                    <div class="project-desc">Interactive Rock-Paper-Scissors game against the computer</div>
+                    <div class="project-title">Rock Paper Scissors Game</div>
+                </a>
+            </div>
+
+             <div class="project-card">
+                <a href="projects/Registration_Form/index.html" target="_blank">
+                    <img src="images/Object4.png" alt="Registration Form">
+                    <div class="project-desc">A web form for registering and booking a reservation</div>
+                    <div class="project-title">Registration Form</div>
+                </a>
+            </div>
+
+            <div class="project-card">
+                <a href="projects/DSA_Portfolio/app" target="_blank">
+                    <img src="images/Object4.png" alt="DSA Group Website">
+                    <div class="project-desc">Compilation of DSA Projects</div>
+                    <div class="project-title">DSA Portfolio</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/MicaellaSalili/address-book.git" target="_blank">
+                    <img src="images/Object2.png" alt="Address Book">
+                    <div class="project-desc">GUI-based Address Book application in Python</div>
+                    <div class="project-title">Address Book</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/MicaellaSalili/my-profile-using-flask.git" target="_blank">
+                    <img src="images/Object3.png" alt="Flask Portfolio">
+                    <div class="project-desc">Web Portfolio using Flask</div>
+                    <div class="project-title">Flask Portfolio</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/MicaellaSalili/cosmoverse-app.git" target="_blank">
+                    <img src="images/Object4.png" alt="Cosmoverse App">
+                    <div class="project-desc">Zodiac Sign Informations Page</div>
+                    <div class="project-title">Cosmoverse</div>
+                </a>
             </div>
         </div>
     </section>
@@ -157,20 +457,33 @@
             </div>
             <div class="contact-links">
                 <h3>Links</h3>
-                <button>GitHub</button>
-                <button>LinkedIn</button>
-                <button>Facebook</button>
-                <button>Instagram</button>
+                <button onclick="window.open('https://github.com/MicaellaSalili', '_blank')">GitHub</button>
+                <button onclick="window.open('https://www.linkedin.com/in/micaella-salili-8245891b3/', '_blank')">LinkedIn</button>
+                <button onclick="window.open('https://www.facebook.com/micasalili/', '_blank')">Facebook</button>
+                <button onclick="window.open('https://www.instagram.com/heiimics/', '_blank')">Instagram</button>
             </div>
             <div class="contact-downloads">
                 <h3>Download</h3>
-                <button>Resume</button>
-                <button>Curiculum Vitae</button>
-                <button>Portfolio</button>
+                <button onclick="window.open('documents/Micaella_Salili_Resume.pdf', '_blank')">Resume</button>
+                <button onclick="window.open('documents/Micaella_Salili_CV.pdf', '_blank')">Curriculum Vitae</button>
+                <button onclick="window.open('documents/Micaella_Salili_Portfolio.pdf', '_blank')">Portfolio</button>
             </div>
         </div>
     </section>
 
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="certificateTitle">Certificate</h2>
+                <span class="close" onclick="closeCertificate()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="certificateViewer" src="" width="100%" height="600px" frameborder="0" style="pointer-events: none;"></iframe>
+                <img id="certificateImage" src="" alt="Certificate" style="display: none; width: 100%; height: 600px; object-fit: contain;">
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        .header img.home {
+            top: 15px;
+            left: 18px;
+            display: block;
+            position: fixed;
+            z-index: 1000; /* Set a higher z-index to ensure it's above other elements */
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Raleway';
+            font-size: 16px;
+        }
+
+        h1 {
+            color:white;
+            font-family: 'Archivo Narrow';
+        }
+
+        .container {
+            background-color: black;
+            position: relative;
+        }
+
+        label {
+            margin-top:15px;
+            left: 50%;
+            font-size: 20px;
+            font-family: 'Archivo Narrow';
+        }
+
+        .result {
+            font-family: Archivo Narrow;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #FE7EB1;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #FF408C;
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="/" class="header">
+        <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+    </a>
+
+    <div class="container">
+        <h1>Sorting Algorithm Application</h1>
+
+        <form action="{{ url_for('sort') }}" method="post" class="sort-form">
+            <label for="array">Enter comma-separated numbers:</label>
+            <input type="text" name="array" id="array" required>
+
+            <label for="search_type">Select Sorting Algorithm:</label>
+            <select name="search_type" id="search_type" required>
+                <option value="merge_sort">Merge Sort</option>
+                <option value="bubble_sort">Bubble Sort</option>
+                <option value="selection_sort">Selection Sort</option>
+                <option value="insertion_sort">Insertion Sort</option>
+                <option value="quick_sort">Quick Sort</option>
+            </select>
+
+            <button type="submit">Sort</button>
+        </form>
+
+        {% if sorted_output %}
+            <div class="result">
+                <h2>Sorted Output:</h2>
+                <p>{{ sorted_output }}</p>
+
+                <h2>Input Data:</h2>
+                <p>{{ test_data }}</p>
+
+                <h2>Execution Time:</h2>
+                <p>{{ execution_time }} milliseconds</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

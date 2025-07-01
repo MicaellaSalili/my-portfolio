@@ -1,0 +1,163 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Header Styles */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem; /* Increased padding for better spacing */
+  background: linear-gradient(145deg, #1c1c1c, #121212);
+  border-bottom: 2px solid #333;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem; /* Slightly larger font size */
+  font-weight: bold;
+}
+
+.app-header nav a {
+  margin: 0 1.5rem; /* Increased spacing between links */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.app-header nav a:hover {
+  color: #f39c12;
+}
+
+/* Zodiac Grid */
+.zodiac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Larger cards */
+  gap: 2rem; /* Increased gap between cards */
+  padding: 2rem 3rem; /* Added horizontal padding */
+}
+
+.zodiac-container {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px; /* Slightly more rounded corners */
+  overflow: hidden;
+}
+
+.zodiac-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+}
+
+.zodiac-image {
+  width: 200px; /* Larger image size */
+  height: 200px; /* Match height for a square shape */
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.zodiac-name {
+  margin-top: 0.8rem; /* Slightly more spacing */
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.1rem; /* Slightly larger font */
+}
+
+/* Zodiac Details */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem; /* Padding inside the card */
+  margin: 2rem auto;
+  max-width: 700px; /* Width of the card */
+  background-color: #1a1a1a; /* Card background color */
+  border-radius: 16px; /* Rounded corners for the card */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Shadow for card effect */
+  border: 1px solid #333; /* Optional border for better definition */
+}
+
+.details-container h2 {
+  font-size: 2rem; /* Larger heading */
+  margin-bottom: 1.5rem; /* Increased spacing below heading */
+  color: #f39c12;
+}
+
+.details-container img {
+  width: 220px; /* Larger image in details view */
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1.5rem; /* Spacing below the image */
+}
+
+.details-container p {
+  font-size: 1.1rem; /* Slightly larger text */
+  line-height: 1.8; /* Better readability */
+  margin-bottom: 2rem; /* Increased spacing below text */
+  text-align: center; /* Center-align text */
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+  margin-top: 1rem; /* Space above the buttons */
+}
+
+.back-button,
+.share-button {
+  background-color: #f39c12;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem; /* Larger button */
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px; /* Slightly more rounded */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d35400;
+}
+
+.share-button {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+.share-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .zodiac-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller cards for mobile */
+    gap: 1.5rem;
+  }
+
+  .details-container {
+    padding: 1.5rem;
+  }
+
+  .details-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .details-container p {
+    font-size: 1rem;
+  }
+
+  .details-container img {
+    width: 180px;
+    height: 180px;
+  }
+}

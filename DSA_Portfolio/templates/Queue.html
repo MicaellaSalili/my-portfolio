@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queue & Deque</title>
+    <link rel="icon" href="{{ url_for('static', filename='sixbomb.ico') }}">
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+        .header img.home {
+            top: 15px;
+            left: 18px;
+            display: block;
+            position: fixed;
+            z-index: 1000; /* Set a higher z-index to ensure it's above other elements */
+        }
+
+        .header {
+            position: relative;
+            text-align: left; /* Center the text horizontally */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='main.png') }}');
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Raleway';
+            color: #000000;
+        }
+
+        .header img.home {
+            top: 15px;
+            left: 18px;
+            display: block;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .header {
+            position: relative;
+            text-align: left;
+        }
+
+        h1 {
+            font-family: Archivo Narrow;
+        }
+
+        p {
+            background-color: rgba(254, 126, 177, 0.6);
+            color: #FFFFFF;
+            border: 2px solid #000000;
+            padding: 13px;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 24px;
+            font-family: Archivo Narrow;
+            margin-right: 10px;
+        }
+
+        .Queue-illus
+        {
+            text-align: center;
+            display: flex;
+        }
+
+        .employee-profile
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .result-box {
+            background-color: white;
+            padding: 5px;
+            font-family: Archivo Narrow;
+            font-size: 50px;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            height:50px;
+            width:50px;
+        }
+
+        input[type="text"] {
+            background-color: #FE7EB1;
+            padding: 5px;
+            font-size: 16px;
+            color: #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            height:30px;
+            width:100px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: #FE7EB1;
+            color: #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            cursor: pointer;
+            margin:2px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF408C;
+        }
+
+        .container {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 200px; /* Adjust top margin as needed */
+        }
+
+        .container h1{
+            color: white;
+        }
+
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+    <a href="/" class="header">
+        <img src="{{ url_for('static', filename='sixbomb.png') }}" alt="Welcome to our Website" class="home">
+    </a>
+
+    <div class="container">
+        <h1 align="center">Getting the Queue</h1>
+
+    <p align="center">Separate them with a space if you'll be entering more than one</p>
+
+    <br>
+
+    <section class="employee-profile" id="employeeProfiles">
+
+        <div class="col-6">
+            <section class="Queue-illus special">
+                <form action="/Queue" method="POST">
+                    <input type="submit" name="dequeue" value="Dequeue">
+                </form>
+            </section>
+        </div>
+
+        <div class="col-6">
+            <section class="Queue-illus special">
+                {% for enqueued in result %}
+                    <div class="result-box">{{enqueued}}</div>
+                {% endfor %}
+            </section>
+        </div>
+
+        <div class="col-6">
+            <section class="Queue-illus special">
+                <form action="/Queue" method="POST">
+                    <label for="inputFront"></label>
+                    <input type="text" id="inputFront" name="inputFront" size="30" placeholder="Enter Front">
+                    <input type="submit" value="Enqueue">
+                </form>
+            </section>
+        </div>
+
+    </section>
+    </div>
+
+
+</body>
+</html>
